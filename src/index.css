@@ -1,3 +1,46 @@
 @tailwind base;
 @tailwind components;
-@tailwind utilities; 
+@tailwind utilities;
+
+@layer utilities {
+  .timer-gradient-exercise {
+    background: linear-gradient(180deg, #FF7676 0%, #FF4646 100%);
+  }
+  
+  .timer-gradient-rest {
+    background: linear-gradient(180deg, #4F7FFF 0%, #2E5EFF 100%);
+  }
+}
+
+/* Custom styles */
+.timer-circle {
+  position: relative;
+}
+
+.timer-circle::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  right: -8px;
+  bottom: -8px;
+  border-radius: 50%;
+  background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.05));
+  z-index: 0;
+}
+
+.timer-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* Smooth transitions */
+.page-transition {
+  transition: background-color 0.5s ease-in-out;
+}
+
+/* Glass effect for buttons */
+.glass-button {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+} 
